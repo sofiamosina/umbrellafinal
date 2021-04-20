@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>UMBRELLA</title>
+  </head>
+  <body>
+    <main class="main-wrapper">
+      <span class="main-logo"></span>
+      <div class="main_content">
+        <div class="main_content-left">
+          <div class="location-search">
+            <p class="location-title">
+              <span class="location-logo"></span>Location
+            </p>
+            <form class="location-form">
+              <input
+                class="location-input"
+                type="text"
+                name="location"
+                placeholder="Search location..."
+              />
+              <button class="location-submit" type="submit">
+                <span class="location-submit-logo"></span>
+              </button>
+            </form>
+            <p class="location-error"></p>
+          </div>
+          <div class="today-wrapper">
+            <div class="today-info">
+              <p class="today-current">Today</p>
+              <p class="today-date">-</p>
+            </div>
+            <div class="today-details">
+              <p class="today-temp">-</p>
+              <p class="today-cloudy">-</p>
+              <p class="today-humidity">-</p>
+              <p class="today-wind">-</p>
+            </div>
+            <div class="today-icon_wrapper">
+              <span class="today-icon"></span>
+            </div>
+          </div>
+        </div>
+        <div class="main_content-right">
+          <div class="period_buttons">
+            <p class="period__hourly">Hourly Forecast</p>
+          </div>
+          <div class="period__forecast">
+            <div class="period__weather">
+              <p class="period__day">-</p>
+              <p class="period__time"></p>
+              <span class="period__icon"></span>
+              <p class="period__temp">-</p>
+              <p class="period__cloudy">-</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
