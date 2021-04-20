@@ -82,7 +82,7 @@ function mapDataHourlyTemp(hourlyTemp) {
     <p class="period__day">${getWeekday(temp["dt"])}</p>
     <p class="period__time">${getTime(temp["dt"])}:00</p>
     <span class="period__icon" style="background-image: url('./img/${
-      temp.weather[0].main
+      temp.weather[0].main.toLowerCase()
     }.png');"></span>
     <p class="period__temp">${Math.round(temp["temp"])}°C</p>
     <p class="period__cloudy">${getClouds(temp["clouds"])}</p>
@@ -100,7 +100,6 @@ $(".location-form").submit(function (event) {
       url: `https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&appid=7fbb02f8c26e09f99f9bf3f703972dcc`,
     })
       .done(function (data) {
-        console.log(data);
         let currentTemp = {};
         currentTemp["temp"] = data.main.temp;
         currentTemp["clouds"] = data.clouds.all;
@@ -115,7 +114,6 @@ $(".location-form").submit(function (event) {
         })
           .done(function (data) {
             hourlyTemp = data["hourly"];
-            console.log(data);
             mapDataHourlyTemp(hourlyTemp.splice(0, 12));
             $.ajax({
               url: `https://api.unsplash.com/search/photos?page=1?perpage=1&query=${input}`,
@@ -127,7 +125,6 @@ $(".location-form").submit(function (event) {
               },
             })
               .done(function (data) {
-                console.log(data.results[0].urls.regular);
                 $(".main-wrapper").css(
                   "background",
                   `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
